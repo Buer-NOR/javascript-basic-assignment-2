@@ -87,8 +87,61 @@ function message(name, hour) { // Funksjon som tar inn navn og time som paramete
     }
 }
 
-console.log(message("Hans", 18)); // Tester funksjonen med navn of time.
+console.log(message("Hans", 18)); // Tester funksjonen med navn og tid.
 
+/******************************************************************************
+4.
+
+Lag følgende funksjon:
+
+Funksjonen skal ta inn en array som parameter og returnere arrayen
+med første og siste indeks fjernet.
+
+Eksempel 1: ["Rød", "Grønn", "Blå", "Gul"] skal returnere ["Grønn", "Blå"].
+
+Eksempel 2: ["En", "To", "Tre", "Fire", "Fem", "Seks"] skal returnere
+["To", "Tre", "Fire", "Fem"].
+
+******************************************************************************/
+
+function arrayRemoveFirstLast(list) { // Funksjon som tar inn arrray som parameter.
+    list.shift(); // Fjerner første elementet.
+    list.pop(); // Fjerner siste elementet.
+    return list;
+}
+
+console.log(arrayRemoveFirstLast(["Elg", "Hund", "Katt", "Mus", "Hest", "Gris", "Skilpadde"])) // Logger array med første og siste element fjernet.
+
+/******************************************************************************
+5.
+
+Lag følgende funksjon:
+
+Funksjonen skal ta inn en string som parameter.
+
+Bruk stringmetoder på stringen for å gjøre følgende:
+ - Erstatt ordet "vanskelig" med "gøy".
+ - Fjern mellomrom fra starten og slutten av stringen.
+
+Returner deretter den oppdaterte stringen.
+
+Eksempel 1: "  Javascript er vanskelig   " skal returnere "Javascript er gøy".
+Eksempel 2: " Det er vanskelig å bruke metoder " skal returnere "Det er gøy å bruke metoder".
+Eksempel 3: "   vanskelig        " skal returnere "gøy".
+
+******************************************************************************/
+
+function changeString(javascriptText) {
+    return javascriptText.replace("vanskelig", "gøy").trim(); // Endrer ordet vanskelig til gøy og "trimmer" start og slutten av stringen.
+}
+
+console.log(changeString("  Javascript er vanskelig  "));
+
+/******************************************************************************)
+6.
+
+Fullfør følgende steg for å manipulere "items"-arrayet. Hvert steg skal
+fullføres ved å bruke passende array-metoder.
 
 /*******************************************************************************
 Steg 1: Fjern det første elementet ("Bok") fra arrayen ved hjelp av riktig metode.
@@ -103,29 +156,19 @@ Ekstra utfordring: Lag et nytt array som kun inkluderer elementer som inneholder
 
 ******************************************************************************/
 
-const equipment = ["Bok", "Viskelær", "Penn", "Notatbok"];
+const items = ["Bok", "Penn", "Notatbok", "Viskelær", "Blyant", "Markør"];
 
-const removeFirst = equipment.shift();
+items.shift(); // Fjerner første elementet "Bok".
 
-console.log(equipment); // Logger array etter bok er fjernet.
+items.splice(4, 1, "Linjal"); // Erstatter "Viskelær" med "Linjal".
 
-const replace = equipment.splice(0, 1, "Linjal");
+items.splice(1, 2, "Markeringspenn"); // Fjerner "Penn" og "Notatbok" og legger til "Markeringspenn".
 
-console.log(equipment); // Logger array etter viskelær erstatter linjal.
-
-const removePennNotat = equipment.splice(1, 2, "Markeringspenn");
-
-console.log(equipment); // Logger array etter pen og notatbok er fjernet og erstattet med markeringspenn.
-
-const combined = equipment.join(" | ");
-
-console.log(combined); // Logger array når elementene er kombinert.
-
-
+console.log(items);
 
 //Ekstra, lager et nytt array.
 
-const newArray = ["Bok", "Viskelær", "Penn", "Notatbok", "Markeringspenn", "Linjal", "Genser", "Tusj"];
+const newArray = ["Bok", "Penn", "Notatbok", "Viskelær", "Blyant", "Markør"];
 
 const onlyE = newArray.filter(item => item.includes("e")); // Filterer elementer som inneholder bokstaven e.
 
