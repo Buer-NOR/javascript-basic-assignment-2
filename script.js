@@ -155,7 +155,20 @@ Eksempel 4: (["En", "To", "Tre"], "To") --> ["En", "Tre"]
 
 ******************************************************************************/
 
-// Skriv koden for oppgave 7 her
+const colors = ["Red", "Green", "Blue"];
+
+function checkArray(arr, str) { // Funksjon som tar inn en array og string som parametere.
+    if (arr.includes(str)) { // Sjekker om array inneholder stringen.
+        const index = arr.indexOf(str); // Finner indexen til str.
+        arr.splice(index, 1); // Fjerner string fra array med splice.
+        return arr; // Returnerer oppdatert array.
+    } else { // Hvis array ikke inneholder stringen.
+        arr.push(str); // legger til string på slutten av array.
+        return arr; // Returnerer oppdatert array.
+    }
+}
+
+console.log(checkArray(colors, "Green"));
 
 /******************************************************************************
 8.
@@ -183,4 +196,17 @@ Returner "😎Kun primitive verdier😎".
 
 ******************************************************************************/
 
-// Skriv koden for oppgave 8 her
+function checkType(para) { // Funksjon som tar inn ett parameter.
+    if (typeof para === "string") { // Sjekker om parameter er en string.
+        return `😎${para}😎`;
+    } else if (typeof para === "number") { // Sjekker om parameter er et tall.
+        return `😎${(para * 2).toString()}😎`; // Dobler verdien og konverterer til string.
+    } else if (typeof para === "boolean") { // Sjekker om parameter er en boolean.
+        return para ? "😎Ja😎" : "😎Slapp av😎"; // Returnerer Ja hvis true, slapp av hvis false.
+    }
+    else { // Hvis parameter er en annen datatype.
+        return "😎Kun primitive verdier😎";
+    }
+}
+
+console.log(checkType("Dette er en string"));
