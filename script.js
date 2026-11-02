@@ -160,9 +160,9 @@ const items = ["Bok", "Penn", "Notatbok", "Viskelær", "Blyant", "Markør"];
 
 items.shift(); // Fjerner første elementet "Bok".
 
-items.splice(4, 1, "Linjal"); // Erstatter "Viskelær" med "Linjal".
+items.splice(2, 1, "Linjal"); // Erstatter "Viskelær" med "Linjal".
 
-items.splice(1, 2, "Markeringspenn"); // Fjerner "Penn" og "Notatbok" og legger til "Markeringspenn".
+items.splice(0, 2, "Markeringspenn"); // Fjerner "Penn" og "Notatbok" og legger til "Markeringspenn".
 
 console.log(items);
 
